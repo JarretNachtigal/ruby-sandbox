@@ -64,7 +64,54 @@ def binary_search(arr, n)
 end
 arr = [9,8,7,5,6,4,3,1,2]
 # find index of given number
-p binary_search(arr, -3)
+# p binary_search(arr, -3)
+
 # selection sort ---------------
+def selection_sort(arr)
+  index = 0
+  while index < arr.length
+    smallest = arr[index] # smallest value (default first value per run through)
+    smallest_index = index # smallest value index
+    yndex = index # second index 
+    while yndex < arr.length
+      if arr[yndex] < smallest # if new value is smaller, keep track
+        smallest = arr[yndex]
+        smallest_index = yndex
+      end
+      yndex += 1 # increment
+    end
+    # swap
+    temp = arr[index]
+    arr[index] = smallest # replace element with the smallest
+    arr[smallest_index] = temp
+    # increment
+    p arr
+    index+=1
+  end
+  return arr
+end
+arr = [0,9,8,7,5,6,4,3,1,2,11]
+# p selection_sort(arr)
 
 # insertion sort ---------------
+def insertion_sort(arr)
+  index = 1
+  while index < arr.length # loop whole arr
+    current = arr[index]
+    position = index - 1 # index of empty slot - 1
+    while position >= 0 # check all values before index
+      if arr[position] > current # if value before empty slot is greater than current, shift
+        arr[position + 1] = arr[position] # shift value to the right 1
+        position -= 1 # decrement position of empty slot
+      else
+        break
+      end
+      arr[position + 1] = current
+    end
+    p arr
+    index += 1
+  end
+  return arr
+end
+arr = [30,0,9,8, 20,7,5 ,15,6,4,3,1,2,11, -1]
+p insertion_sort(arr)
