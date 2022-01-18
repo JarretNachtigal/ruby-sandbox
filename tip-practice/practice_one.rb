@@ -1,4 +1,4 @@
-# hash comparison -----
+# hash comparison ---------------
   # find all combinations of numbers that add up to 10
   # return arr of combinations
 def ten_combinations(arr)
@@ -15,13 +15,32 @@ def ten_combinations(arr)
   return new_arr
 end
 arr = [1,2,3,4,5,6,7,8,9]
-# [[6, 4], [7, 3], [8, 2], [9, 1]]
-p ten_combinations(arr)
+# output: [[6, 4], [7, 3], [8, 2], [9, 1]]
+# p ten_combinations(arr)
 
-# bubble sort -----
+# bubble sort ---------------
+def bubble_sort(arr)
+  sorted = false # when a shift is made, set to false and continue
+  while sorted == false # continue until clean run through arr
+    index = 0
+    sorted = true # becomes false unless run through is clean
+    while index < arr.length - 1  # loop through array
+      if arr[index] > arr[index+1] # if 2 elements are not in order - swap
+        temp = arr[index]
+        arr[index] = arr[index+1]
+        arr[index+1] = temp
+        sorted = false # continue next pass through
+      end
+      index+=1 # increment
+    end
+  end
+  return arr
+end
+arr = [9,8,7,5,6,4,3,1,2]
+# output: [1,2,3,4,5,6,7,8,9]
+p bubble_sort(arr)
+# binary search ---------------
 
-# binary search -----
+# selection sort ---------------
 
-# selection sort -----
-
-# insertion sort -----
+# insertion sort ---------------
