@@ -32,14 +32,14 @@ def roman_numeral_value(str)
   acc = 0
   while i < str.length
     roman_numeral = str[i]
-    p "this is the outer loop #{str[i]}"
+    # p "this is the outer loop #{str[i]}"
     #check if next char is valid
     index = i + 1
     # if it is, add to roman_numeral
     while numerals_key[roman_numeral] && index < str.length
-      p str[index]
+      # p str[index]
       roman_numeral += str[index]
-      p roman_numeral
+      # p roman_numeral
       index += 1
       i += 1
     end
@@ -55,5 +55,5 @@ def roman_numeral_value(str)
 end
 
 p roman_numeral_value("lviii") # 58
-# p roman_numeral_value("iii") # 3
-# p roman_numeral_value("mcmxciv") # 1994
+p roman_numeral_value("iii") # 3
+p roman_numeral_value("mcmxciv") # 1994
